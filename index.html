@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#dff5ff">
+<title>A Little Surprise for Tasyu</title>
+<style>
+:root{--navy:#174a70;--blue:#dff5ff;--blue2:#a9dcf2;--gold:#f5c84c;--ink:#214b68}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:linear-gradient(160deg,#eafaff,#bde8f7 55%,#e9f8ff);overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;border-radius:50%;background:#fff8;filter:blur(2px);z-index:-1}
+body:before{width:240px;height:240px;top:-80px;left:-60px}body:after{width:300px;height:300px;right:-120px;bottom:-100px}
+.wrap{width:min(92%,620px);margin:0 auto;padding:38px 0 50px}
+.card{position:relative;text-align:center;background:#ffffffd9;border:1px solid #fff;border-radius:28px;padding:clamp(24px,6vw,44px);box-shadow:0 18px 50px #387da522;backdrop-filter:blur(8px);overflow:hidden}
+.kicker{font:700 11px/1.4 Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#5793b4}
+h1{font-size:clamp(34px,8vw,54px);line-height:1.02;margin:15px 0;color:var(--navy)}
+h2{font-size:clamp(25px,6vw,34px);color:var(--navy);margin:8px 0 14px}
+p{font-size:17px;line-height:1.65;margin:12px 0}
+.wave{font-size:42px;margin:8px 0 4px}
+button{border:0;border-radius:999px;padding:15px 24px;background:var(--navy);color:white;font-weight:700;letter-spacing:1px;font-size:12px;cursor:pointer;box-shadow:0 8px 18px #174a7030;transition:.2s}
+button:hover{transform:translateY(-2px);background:#23658f}
+.screen{display:none;animation:rise .65s ease both}.screen.active{display:block}
+.medals{display:flex;justify-content:center;gap:18px;margin:22px auto}
+.medal{width:112px;height:132px;display:grid;place-items:center;position:relative}
+.medal:before{content:"";position:absolute;top:0;width:26px;height:50px;background:linear-gradient(90deg,#5a9fc7,#a7dff1);clip-path:polygon(0 0,100% 0,85% 100%,50% 78%,15% 100%)}
+.coin{position:absolute;bottom:0;width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 28%,#fff2a8,#f7d45e 45%,#d89a1c);border:5px solid #fbe99a;box-shadow:0 5px 12px #9c741c40;font:700 31px Georgia;color:#fff9d6;text-shadow:0 2px 2px #a97813}
+.tag{display:inline-block;padding:8px 13px;margin:5px;border-radius:99px;background:#e8f7ff;color:#28668d;font:700 11px Arial,sans-serif;letter-spacing:1px}
+.note{margin:22px 0;padding:18px;border-radius:18px;background:#f1faff;border:1px dashed #a9d5e9}
+.small{font:12px Arial,sans-serif;color:#6590a9;letter-spacing:.5px}
+.sparkle{color:#e6b52d;font-size:20px}
+.footer{margin-top:18px;font:11px Arial,sans-serif;letter-spacing:1px;color:#6d9bb4}
+.bubble{position:fixed;bottom:-50px;border:1px solid #fff9;border-radius:50%;background:#fff4;animation:float 12s linear infinite;pointer-events:none}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{to{transform:translateY(-115vh) translateX(35px);opacity:0}}
+@media(max-width:420px){.medals{gap:4px}.medal{transform:scale(.88);margin:0 -5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <main class="card">
+    <section class="screen active" id="intro">
+      <div class="wave">🫧🐚</div>
+      <div class="kicker">a tiny ocean-mail just for you</div>
+      <h1>Hey, Tasyu!</h1>
+      <p>Someone has a little something to say to a very cool champion...</p>
+      <p class="sparkle">✦ ✧ ✦</p>
+      <button onclick="show('congrats')">OPEN YOUR SURPRISE ↗</button>
+      <div class="footer">P.S. this message comes with extra bubbles.</div>
+    </section>
+
+    <section class="screen" id="congrats">
+      <div class="kicker">breaking news from the ocean</div>
+      <h2>YOU DID IT!!</h2>
+      <div class="medals">
+        <div class="medal"><div class="coin">1</div></div>
+        <div class="medal"><div class="coin">1</div></div>
+      </div>
+      <span class="tag">🥇 INDIVIDUAL GOLD</span>
+      <span class="tag">🥇 RELAY GOLD</span>
+      <p><strong>Two gold medals?!</strong><br>That's not just amazing, that's GOLDEN behavior!!</p>
+      <p>Congratulations, Tasyu! You worked for it, you earned it, and you deserve to celebrate every bit of it. 💛</p>
+      <button onclick="show('tomorrow')">WAIT, THERE'S MORE →</button>
+    </section>
+
+    <section class="screen" id="tomorrow">
+      <div class="wave">🌊🐬</div>
+      <div class="kicker">a little note for tomorrow</div>
+      <h2>KEEP SWIMMING,<br>KEEP SHINING!</h2>
+      <div class="note">
+        <p>Good luck for your next competition!</p>
+        <p>Take a deep breath, trust yourself, and enjoy every moment. Whatever happens, you've already made everyone proud.</p>
+        <p><strong>Go give it your best, Tasyu. YOU GOT THIS!!</strong> ✨</p>
+      </div>
+      <p class="sparkle">⋆｡°✩ 🫧 ✩°｡⋆</p>
+      <p>Now go get some rest, future gold collector. Hehe.</p>
+      <div class="small">ROOTING FOR YOU ALWAYS ♡</div>
+      <button onclick="show('end')">ONE LAST THING →</button>
+    </section>
+
+    <section class="screen" id="end">
+      <div class="wave">🏅💙</div>
+      <h2>PROUD OF YOU!</h2>
+      <p>Keep making waves, champion.</p>
+      <h2 style="color:#c28b16">KEEP SWIMMING,<br>KEEP SHINING.</h2>
+      <p class="small">YOU'RE DOING GREAT, TASYU ♡</p>
+      <button onclick="show('intro')">READ IT AGAIN ↺</button>
+    </section>
+  </main>
+  <div class="footer" style="text-align:center">made with a little sunshine & a lot of cheers ☀️</div>
+</div>
+<script>
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='congrats'||id==='tomorrow') confetti();
+}
+function confetti(){
+  const colors=['#f5c84c','#8acde8','#ffffff','#f3a7bd'];
+  for(let i=0;i<24;i++){
+    const el=document.createElement('i');
+    el.style.cssText=`position:fixed;z-index:5;top:-12px;left:${Math.random()*100}vw;width:7px;height:11px;background:${colors[i%colors.length]};border-radius:3px;pointer-events:none;transform:rotate(${Math.random()*180}deg);transition:transform 2.4s ease,top 2.4s ease,opacity 2.4s`;
+    document.body.appendChild(el);
+    requestAnimationFrame(()=>{el.style.top='105vh';el.style.transform=`translateX(${Math.random()*150-75}px) rotate(${Math.random()*720}deg)`;el.style.opacity='0'});
+    setTimeout(()=>el.remove(),2600);
+  }
+}
+for(let i=0;i<9;i++){const b=document.createElement('span');b.className='bubble';let s=10+Math.random()*24;b.style.width=s+'px';b.style.height=s+'px';b.style.left=Math.random()*100+'vw';b.style.animationDelay=(-Math.random()*12)+'s';b.style.animationDuration=(9+Math.random()*8)+'s';document.body.appendChild(b)}
+</script>
+</body>
+</html>
